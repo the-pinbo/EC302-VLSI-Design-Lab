@@ -1,0 +1,39 @@
+*** Psuedo NMOS Inverter
+
+.include ../00_Resources/TechnologyFile/t14y_tsmc_025_level3.txt
+m_load sl sl vout 0 cmosn l=0.5u w=25u
+m_driver vout gd 0 0 cmosn l=0.5u w=10u
+
+v_dd sl 0 5
+v_test vtest vout 0
+v_in gd 0 PULSE(0 5 0 0 0 1n 2n)
+
+.control
+
+	foreach width 1u 10u 100u
+		alter @m_load[w] = $width
+		dc v_in 0 5 0.01
+	end
+
+	foreach width 1u 10u 100u
+		alter @m_driver[w] = $width
+		dc v_in 0 5 0.01
+	end 
+
+	foreach length 1u 10u 100u
+		alter @m_load[l] = $length
+		dc v_in 0 5 0.01
+	end
+
+	foreach length 1u 10u 100u
+		alter @m_driver[l] = $length
+		dc v_in 0 5 0.01
+	end
+
+	foreach iter 1 2 3 4 5 6 7 8 9 10 11 12
+		setplot dc$iter
+		plot vout
+	end
+	
+.endc
+.end

@@ -1,0 +1,47 @@
+*** nmos inverter timing 
+
+.include ../00_Resources/TechnologyFile/t14y_tsmc_025_level3.txt
+
+
+m_load supply supply out GND cmosn l=.5u w=10u
+m_driver out in GND GND cmosn l=.5u w=10u
+
+v_dd supply GND 5
+v_in in GND pulse(0 5 0 .1n .1n 1n 2n)
+v_out out vtest 0
+
+.control 
+tran 1p 4n
+setplot tran1
+plot v(out), v(in)
+
+
+meas tran vmax MAX out from=0.0n to=2n
+
+meas tran vmin MIN out from=0.0n to=2n
+
+let v10 = Vmin + 0.1*(Vmax - Vmin)
+let v50 = Vmin + 0.5*(Vmax - Vmin)
+let v90 = Vmin + 0.9*(Vmax - Vmin)
+
+print v10, v50, v90
+
+meas tran trise trig out val=v10 rise=1 targ out val=v90 rise=1
+print trise
+meas tran tfall trig out val=v90 fall=1 targ out val=v10 fall=1
+print tfall
+
+meas tran tphl trig in val=2.5 rise = 1 targ out val=v50 fall=1
+
+meas tran tplh trig in val=2.5 fall=1 targ out val=v50 rise=1
+print tphl
+print tplh
+
+let tp = (tphl+tplh)/2
+print tp
+
+.endc
+
+.end
+
+

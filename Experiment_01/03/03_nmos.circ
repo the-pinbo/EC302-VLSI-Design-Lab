@@ -1,0 +1,36 @@
+*** Effect of variation of length on input and output characteristics
+
+.include t14y_tsmc_025_level3.txt
+
+** netlist
+m0 vdd vin 0 0 cmosn l=1u w=10u
+
+vdd vdd 0 3
+vin vin 0 3
+
+** Variation of length
+    .control
+        let plot_num = 1
+        foreach length 1u 2u 5u 10u 20u
+
+            ** changing length of the nmos
+            alter m0 l = $length // can also use `alter @m0[l] = $length`
+
+            ** input characteristics
+            dc vin 0 3 .01 vdd 0 3 1
+            setplot dc$&plot_num
+            let plot_num = plot_num + 1
+            plot -i(vdd) title "Input characteristics for length = $length"
+            hardcopy output/InputCharacteristics$length -i(vdd)
+
+            ** output characteristics
+            dc vdd 0 3 0.1 vin 0 3 1
+            setplot dc$&plot_num
+            let plot_num = plot_num + 1
+            plot -i(vdd) title "Output characteristics for length = $length"
+            hardcopy output/OutputCharacteristics$length -i(vdd)
+        end
+    .endc
+
+
+.end

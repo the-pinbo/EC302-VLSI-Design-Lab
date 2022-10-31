@@ -1,0 +1,27 @@
+*** nmos characteristics
+
+.include ./t14y_tsmc_025_level3.txt
+
+*** netlist
+m0 vdd vin vss 0 cmosn W = 10u L = 1u
+vin vin 0 3.3V
+vdd vdd 0 3.3V
+vss vss 0 0.0V
+
+*** analysis
+
+*** Input Characteristics
+.control
+	dc vin 0 3.3 0.1 vdd 0 3 1
+	run
+	setplot dc1
+	plot -vdd#branch title "Input Characteristics"
+.endc
+
+*** Output Characteristics
+.control
+	dc vdd 0 3.3 0.1 vin 0 3 1
+	run
+	setplot dc2
+	plot -vdd#branch title "Output Characteristics"
+.endc

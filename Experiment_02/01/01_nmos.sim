@@ -1,0 +1,26 @@
+*** nmos char
+
+.include ./t14y_tsmc_025_level3.txt
+
+** netlist
+m0 vdd vin 0 0 cmosn l=1u w=10u
+
+vdd vdd 0 3v
+vin vin 0 3v
+
+** Analysis
+.control
+    ** Input characteristics
+    dc vin 0 3 .01 vdd 0 3 1
+    setplot dc1
+    plot -i(vdd) title "Input characteristics"
+    hardcopy output/InputCharacteristics -i(vdd)
+
+    ** Output characteristics
+    dc vdd 0 3 .01 vin 0 3 1
+    setplot dc2
+    plot -i(vdd) title "Output characteristics"
+    hardcopy output/OutputCharacteristics -i(vdd)
+.endc
+
+.end
