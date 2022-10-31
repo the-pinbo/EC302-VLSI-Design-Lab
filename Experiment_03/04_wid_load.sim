@@ -1,0 +1,56 @@
+* nmos load inverter with varying width of load
+
+.include ./t14y_tsmc_025_level3.txt
+
+*** netlist
+mu vdd vdd vout 0 cmosn l = 1u w = 10u
+md vout vin 0 0 cmosn l = 1u w = 10u
+
+vdd vdd 0 5
+vin vin 0 PULSE(0 5 0 0 0 2n 4n)
+
+.control
+
+	foreach wid 1u 10u 100u
+		alter md w $wid
+		tran .01n 4n
+
+		meas tran vmax max vout from=0 to=2n
+		meas tran vmin min vout from=0 to=2n
+
+		let v10 = Vmin + 0.1*(Vmax - Vmin)
+		let v50 = Vmin + 0.5*(Vmax - Vmin)
+		let v90 = Vmin + 0.9*(Vmax - Vmin)
+
+
+		print v10, v50, v90
+
+		meas tran trise trig vout val=v10 rise=1 targ vout val=v90 rise=1
+		print trise
+		meas tran tfall trig vout val=v90 fall=1 targ vout val=v10 fall=1
+		print tfall
+
+		meas tran tphl trig vin val=2.5 rise = 1 targ vout val=v50 fall=1
+		print tphl
+
+		meas tran tplh trig vin val=2.5 fall=1 targ vout val=v50 rise=1
+		print tplh
+
+		let tp = (tphl+tplh)/2
+		print tp
+
+		print i(vdd) title "Current with width of load = $wid"
+		plot vin vout title "Transfer function with width of load = $wid"
+		plot vdd*i(vdd) title "Power consumed with width of load = $wid"
+
+
+		dc vin 0 5 0.1
+		plot vout title "DC responce with width of load = $wid"
+
+		plot vin - vout title "Operation with width of load = $wid"
+
+	end
+
+.endc
+
+.end
