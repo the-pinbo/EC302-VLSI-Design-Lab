@@ -1,0 +1,25 @@
+* cmos inverter
+.include ./t14y_tsmc_025_level3.txt
+
+.option scale=1u
+
+M1000 vout vin vdd Vdd cmosp w=8 l=4
++  ad=0 pd=0 as=0 ps=0
+M1001 vout vin vss Gnd cmosn w=4 l=4
++  ad=0 pd=0 as=0 ps=0
+C0 vss 0 9.40fF
+C1 vout 0 2.26fF
+C2 vin 0 9.19fF
+C3 vdd 0 10.15fF
+
+
+vdd vdd 0 5
+vin vin 0 pulse(5 0 .1n .1n .1n 2n 4n)
+vss vss 0 0
+
+.control
+    tran 1p 5n
+    setplot tran1
+    plot vin vout
+.endc
+.end

@@ -1,0 +1,26 @@
+* SPICE3 file created from aoi.ext - technology: scmos
+
+.option scale=1u
+
+M1000 vdd a a_n9_0# vdd pfet w=15 l=4
++  ad=0 pd=0 as=0 ps=0
+M1001 vout c a_n9_0# vdd pfet w=15 l=4
++  ad=0 pd=0 as=0 ps=0
+M1002 vss b a_3_n56# Gnd nfet w=7 l=4
++  ad=0 pd=0 as=0 ps=0
+M1003 a_3_n56# a vout Gnd nfet w=7 l=4
++  ad=0 pd=0 as=0 ps=0
+M1004 a_n9_0# b vdd vdd pfet w=15 l=4
++  ad=0 pd=0 as=0 ps=0
+M1005 vout c vss Gnd nfet w=7 l=4
++  ad=0 pd=0 as=0 ps=0
+C0 b vdd 7.28fF
+C1 a vdd 7.28fF
+C2 c vdd 7.28fF
+C3 vout vdd 3.38fF
+C4 a_n9_0# vdd 6.20fF
+C5 vss 0 14.10fF **FLOATING
+C6 vout 0 14.10fF **FLOATING
+C7 c 0 12.65fF **FLOATING
+C8 b 0 12.65fF **FLOATING
+C9 a 0 12.65fF **FLOATING

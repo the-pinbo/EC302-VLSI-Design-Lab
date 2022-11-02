@@ -1,0 +1,29 @@
+* aoi ~(a.b+c)
+
+.include ./t14y_tsmc_025_level3.txt
+
+*** netlist
+mpa vdd vin_a vdd_c vdd cmosp l = 1u w = 10u
+mpb vdd vin_b vdd_c vdd cmosp l = 1u w = 10u
+mpc vdd_c vin_c vout vdd cmosp l = 1u w = 10u
+
+mna vout vin_a vdd_b 0 cmosn l = 1u w = 10u
+mnb vdd_b vin_b 0 0 cmosn l = 1u w = 10u
+mnc vout vin_c 0 0 cmosn l = 1u w = 10u
+c_load vout 0 1f
+
+
+
+vdd vdd 0 5
+vin_b vin_b 0 PULSE(5 0 0 0 0 4n 8n)
+vin_a vin_a 0 PULSE(5 0 0 0 0 2n 4n)
+vin_c vin_c 0 PULSE(5 0 0 0 0 1n 2n)
+.control
+    tran .01n 8n
+    plot vin_a title "Input a"
+    plot vin_b title "Input b"
+    plot vin_c title "Input c"
+    plot vout title "Output "
+.endc
+
+.end

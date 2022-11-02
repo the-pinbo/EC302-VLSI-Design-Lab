@@ -1,0 +1,110 @@
+magic
+tech scmos
+timestamp 1667133897
+<< nwell >>
+rect -50 45 -4 88
+rect 6 36 46 68
+<< polysilicon >>
+rect -37 68 -33 70
+rect -25 68 -21 70
+rect 23 56 29 58
+rect -37 22 -33 53
+rect -25 22 -21 53
+rect 23 21 29 41
+rect -37 13 -33 15
+rect -25 13 -21 15
+rect 23 13 29 15
+<< ndiffusion >>
+rect -43 19 -37 22
+rect -39 15 -37 19
+rect -33 18 -30 22
+rect -26 18 -25 22
+rect -33 15 -25 18
+rect -21 19 -13 22
+rect -21 15 -17 19
+rect 16 19 23 21
+rect 16 15 17 19
+rect 21 15 23 19
+rect 29 17 31 21
+rect 35 17 36 21
+rect 29 15 36 17
+<< pdiffusion >>
+rect -39 64 -37 68
+rect -43 53 -37 64
+rect -33 53 -25 68
+rect -21 57 -13 68
+rect -21 53 -18 57
+rect -14 53 -13 57
+rect 16 55 23 56
+rect 16 51 17 55
+rect 21 51 23 55
+rect 16 41 23 51
+rect 29 45 36 56
+rect 29 41 31 45
+rect 35 41 36 45
+<< metal1 >>
+rect -39 78 -30 82
+rect -26 78 -17 82
+rect -13 78 28 82
+rect -43 68 -39 78
+rect 24 67 28 78
+rect 21 63 32 67
+rect -18 38 -14 53
+rect 17 55 21 63
+rect -18 33 -1 38
+rect -30 29 -14 33
+rect -5 30 -1 33
+rect -30 22 -26 29
+rect -5 26 19 30
+rect 31 21 35 41
+rect -43 4 -39 15
+rect -17 4 -13 15
+rect 17 4 21 15
+rect -39 0 -30 4
+rect -26 0 -17 4
+rect -13 0 1 4
+rect 5 0 16 4
+rect 20 0 32 4
+<< ntransistor >>
+rect -37 15 -33 22
+rect -25 15 -21 22
+rect 23 15 29 21
+<< ptransistor >>
+rect -37 53 -33 68
+rect -25 53 -21 68
+rect 23 41 29 56
+<< polycontact >>
+rect -41 35 -37 39
+rect -29 36 -25 40
+rect 19 26 23 30
+<< ndcontact >>
+rect -43 15 -39 19
+rect -30 18 -26 22
+rect -17 15 -13 19
+rect 17 15 21 19
+rect 31 17 35 21
+<< pdcontact >>
+rect -43 64 -39 68
+rect -18 53 -14 57
+rect 17 51 21 55
+rect 31 41 35 45
+<< psubstratepcontact >>
+rect -43 0 -39 4
+rect -30 0 -26 4
+rect -17 0 -13 4
+rect 1 0 5 4
+rect 16 0 20 4
+rect 32 0 36 4
+<< nsubstratencontact >>
+rect -43 78 -39 82
+rect -30 78 -26 82
+rect -17 78 -13 82
+rect 17 63 21 67
+rect 32 63 36 67
+<< labels >>
+rlabel nwell -43 82 -13 82 1 vdd
+rlabel metal1 -43 0 -13 0 5 vss
+rlabel polycontact -41 35 -41 39 7 a
+rlabel polycontact -29 36 -29 40 7 b
+rlabel metal1 33 28 33 28 1 Vout
+<< end >>

@@ -1,0 +1,18 @@
+* SPICE3 file created from norf.ext - technology: scmos
+
+.option scale=1u
+
+M1000 vout b a_6_n1# vdd pfet w=15 l=4
++  ad=0 pd=0 as=0 ps=0
+M1001 vss b vout Gnd nfet w=7 l=4
++  ad=0 pd=0 as=0 ps=0
+M1002 a_6_n1# a vdd vdd pfet w=15 l=4
++  ad=0 pd=0 as=0 ps=0
+M1003 vout a vss Gnd nfet w=7 l=4
++  ad=0 pd=0 as=0 ps=0
+C0 vdd b 4.12fF
+C1 vdd a 4.12fF
+C2 vss 0 7.52fF **FLOATING
+C3 vout 0 5.83fF **FLOATING
+C4 b 0 10.12fF **FLOATING
+C5 a 0 10.12fF **FLOATING

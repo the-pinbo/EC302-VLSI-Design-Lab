@@ -1,0 +1,24 @@
+* nmos load inverter with varying width of load
+
+.include ./t14y_tsmc_025_level3.txt
+
+*** netlist
+mpa vdd vin_a vout vdd cmosp l = 1u w = 25u
+mpb vdd vin_b vout vdd cmosp l = 1u w = 25u
+
+mna vout vin_a 0 0 cmosn l = 1u w = 10u
+mnb vout vin_b 0 0 cmosn l = 1u w = 10u
+c_load vout 0 1f
+
+
+
+vdd vdd 0 5
+vin_a vin_a 0 PULSE(5 0 0 0 0 2n 4n)
+vin_a vin_a 0 PULSE(5 0 0 0 0 4n 8n)
+
+.control
+    tran .01n 8n
+    plot vin_a vin_b vout
+.endc
+
+.end

@@ -1,0 +1,118 @@
+magic
+tech scmos
+timestamp 1667132864
+<< nwell >>
+rect -39 -1 36 33
+<< polysilicon >>
+rect -31 22 -29 24
+rect -23 22 -21 24
+rect 13 19 19 21
+rect -31 -4 -29 12
+rect -23 -4 -21 12
+rect -35 -8 -29 -4
+rect -27 -8 -21 -4
+rect 13 -7 19 4
+rect -31 -12 -29 -8
+rect -23 -12 -21 -8
+rect 10 -11 19 -7
+rect 13 -16 19 -11
+rect -31 -19 -29 -17
+rect -23 -19 -21 -17
+rect 13 -24 19 -22
+<< ndiffusion >>
+rect -36 -13 -31 -12
+rect -32 -17 -31 -13
+rect -29 -17 -23 -12
+rect -21 -16 -20 -12
+rect -21 -17 -16 -16
+rect 6 -18 13 -16
+rect 6 -22 7 -18
+rect 11 -22 13 -18
+rect 19 -20 21 -16
+rect 25 -20 26 -16
+rect 19 -22 26 -20
+<< pdiffusion >>
+rect -36 19 -31 22
+rect -32 15 -31 19
+rect -36 12 -31 15
+rect -29 19 -23 22
+rect -29 15 -28 19
+rect -24 15 -23 19
+rect -29 12 -23 15
+rect -21 19 -16 22
+rect -21 15 -20 19
+rect -21 12 -16 15
+rect 6 18 13 19
+rect 6 14 7 18
+rect 11 14 13 18
+rect 6 4 13 14
+rect 19 8 26 19
+rect 19 4 21 8
+rect 25 4 26 8
+<< metal1 >>
+rect -31 26 -25 31
+rect -20 26 -11 31
+rect -6 26 0 31
+rect 5 26 12 31
+rect 17 26 28 31
+rect -28 19 -24 26
+rect -36 4 -32 15
+rect -20 4 -16 15
+rect 7 18 11 26
+rect -36 0 -16 4
+rect -20 -3 -16 0
+rect -20 -7 10 -3
+rect -20 -8 5 -7
+rect -20 -12 -16 -8
+rect 21 -16 25 4
+rect -36 -30 -32 -17
+rect 7 -30 11 -22
+rect -36 -31 11 -30
+rect -32 -35 -23 -31
+rect -19 -35 -11 -31
+rect -7 -35 -2 -31
+rect 2 -35 7 -31
+rect 11 -35 22 -31
+<< ntransistor >>
+rect -31 -17 -29 -12
+rect -23 -17 -21 -12
+rect 13 -22 19 -16
+<< ptransistor >>
+rect -31 12 -29 22
+rect -23 12 -21 22
+rect 13 4 19 19
+<< polycontact >>
+rect 5 -11 10 -7
+<< ndcontact >>
+rect -36 -17 -32 -13
+rect -20 -16 -16 -12
+rect 7 -22 11 -18
+rect 21 -20 25 -16
+<< pdcontact >>
+rect -36 15 -32 19
+rect -28 15 -24 19
+rect -20 15 -16 19
+rect 7 14 11 18
+rect 21 4 25 8
+<< psubstratepcontact >>
+rect -36 -35 -32 -31
+rect -23 -35 -19 -31
+rect -11 -35 -7 -31
+rect -2 -35 2 -31
+rect 7 -35 11 -31
+rect 22 -35 26 -31
+<< nsubstratencontact >>
+rect -36 26 -31 31
+rect -25 26 -20 31
+rect -11 26 -6 31
+rect 0 26 5 31
+rect 12 26 17 31
+<< nsubstratendiff >>
+rect -20 26 -16 31
+<< labels >>
+rlabel polysilicon -33 -6 -33 -6 7 a
+rlabel polysilicon -25 -6 -25 -6 7 b
+rlabel metal1 23 -9 23 -9 1 Vout
+rlabel metal1 17 -33 17 -33 1 Vss
+rlabel metal1 23 28 23 28 1 vdd
+<< end >>

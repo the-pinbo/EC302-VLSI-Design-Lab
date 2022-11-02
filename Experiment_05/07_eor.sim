@@ -1,0 +1,39 @@
+* xor
+
+.include ./t14y_tsmc_025_level3.txt
+
+*** netlist
+
+mu_a vdd vin_a vin_a_inv vdd cmosp l = 1u w = 25u
+md_a vin_a_inv vin_a 0 0 cmosn l = 1u w = 10u
+
+mu_b vdd vin_b vin_b_inv vdd cmosp l = 1u w = 25u
+md_b vin_b_inv vin_b 0 0 cmosn l = 1u w = 10u
+
+
+mpb_inv vdd vin_b_inv vdd_a vdd cmosp l = 1u w = 25u
+mpb vdd vin_b vdd_a_inv vdd cmosp l = 1u w = 25u
+
+mpa vdd vin_a vdd_b vdd cmosp l = 1u w = 40u
+mpb vdd_b vin_b vin_inv vdd cmosp l = 1u w = 40u
+
+mna vin_inv vin_a 0 0 cmosn l = 1u w = 10u
+mnb vin_inv vin_b 0 0 cmosn l = 1u w = 10u
+
+mu vdd vin_inv vout vdd cmosp l = 1u w = 25u
+md vout vin_inv 0 0 cmosn l = 1u w = 10u
+
+c_load vout 0 1f
+
+vdd vdd 0 5
+vin_a vin_a 0 PULSE(5 0 0 0 0 2n 4n)
+vin_b vin_b 0 PULSE(5 0 0 0 0 4n 8n)
+
+.control
+    tran .01n 8n
+    plot vin_a title "Input a"
+    plot vin_b title "Input b"
+    plot vout title "Output "
+.endc
+
+.end

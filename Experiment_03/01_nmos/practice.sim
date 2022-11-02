@@ -1,0 +1,64 @@
+* cmos inverter
+
+.include ./t14y_tsmc_025_level3.txt
+
+mp vdd vin vout vdd CMOSP l = 1u w = 10u
+mn vout vin 0 0 CMOSN l = 1u w = 5u
+
+cl vout 0 10f
+rl vout 0 100k
+
+
+vdd vdd 0 5
+vin vin 0 pulse(5 0 .1n .15n .15n 2n 4n)
+
+.control
+    tran .01n 4n
+    setplot tran1
+    plot vin vout
+    setplot tran2
+    plot i(vdd) -i(vin)
+
+    meas tran vmax max vout from=.5n to=2n
+    print vmax
+
+    meas tran vmin min vout from=2.5n to=4n
+    print vmin
+
+    let v10 = vmin + .1*(vmax-vmin)
+    print v10
+
+    let v50 = vmin + .5*(vmax-vmin)
+    print v50
+
+    let v90 = vmin + .9*(vmax-vmin)
+    print v90
+
+    meas tran trise trig vout val=v10 rise=1 targ vout val=v90 rise=1
+    print trise
+
+    meas tran tfall trig vout val=v90 fall=1 targ vout val=v10 fall=1
+    print tfall
+
+    let tpd = (trise+tfall)/2
+    print tpd
+
+    meas tran tphl trig vin val=2.5 rise=1 targ vout val=v50 fall=1
+    print tphl
+
+    meas tran tplh trig vin val=2.5 fall=1 targ vout val=v50 rise=1
+    print tplh
+
+    let dynmPower = (10f*25)/4n
+    print dynmPower
+
+    let statPower = -i(vdd)*vdd
+
+    meas tran avgStatPow avg statPower from=0 to=4n
+    print avgStatPow
+
+    plot statPower avgStatPow dynmPower
+
+
+.endc
+.end

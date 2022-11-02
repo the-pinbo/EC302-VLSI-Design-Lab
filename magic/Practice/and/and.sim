@@ -1,0 +1,22 @@
+| units: 100 tech: scmos format: MIT
+n a_n36_12# Vss Vout 6 6 13 -21
+p a a_n36_12# vdd 2 10 -30 12
+n b a_n29_n17# a_n36_12# 2 5 -22 -16
+n a Vss a_n29_n17# 2 5 -30 -16
+p a_n36_12# vdd Vout 6 15 13 4
+p b vdd a_n36_12# 2 10 -22 12
+C vdd b 4.05
+C vdd a 4.05
+C vdd a_n36_12# 10.40
+R a_n29_n17# 32
+C Vss GND 13.30
+R Vss 1461
+C Vout GND 2.82
+R Vout 159
+C a_n36_12# GND 18.61
+R a_n36_12# 661
+C b GND 4.84
+R b 513
+C a GND 4.84
+R a 513
+R vdd 6403

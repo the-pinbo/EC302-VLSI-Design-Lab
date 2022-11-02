@@ -1,0 +1,25 @@
+* SPICE3 file created from inv.ext - technology: scmos
+.include ./t14y_tsmc_025_level3.txt
+
+.option scale=1u
+
+M1000 Vout a Vdd Vdd cmosp w=15 l=6
+M1001 Vout a Vss Gnd cmosn w=6 l=6
+
+
+v_dd Vdd 0 5
+v_ss Vss 0 0
+
+v_in a 0 PULSE(0 5 0 0 0 10n 20n)
+
+
+
+* Analysis
+* Input Characteristics
+.control
+    tran 0.1n 40n
+    setplot tran1
+    plot Vout a
+.endc
+.end
+

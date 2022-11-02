@@ -1,0 +1,15 @@
+* SPICE3 file created from first.ext - technology: scmos
+
+.option scale=1u
+
+M1000 out in vss Gnd nfet w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1001 out in vdd vdd pfet w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 vss 0 2.54fF **FLOATING
+C1 out 0 2.54fF **FLOATING
+C2 in 0 5.38fF **FLOATING
+
+*Declare voltage sources
+V_dd vdd 0 dc 0
+V_ss vss 0 dc 0

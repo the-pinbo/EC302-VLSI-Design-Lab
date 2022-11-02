@@ -1,0 +1,9 @@
+** To find the drc error go to the shell console and type
+`drc find`
+** links
+http://bwrcs.eecs.berkeley.edu/Classes/IcBook/magic/
+http://opencircuitdesign.com/magic/userguide.html
+https://support.freedomscientific.com/content/documents/manuals/MAGic/MAGic-Keystroke-Cards.pdf
+** extraction
+1) extract all
+2) ext2spice

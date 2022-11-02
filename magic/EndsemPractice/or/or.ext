@@ -1,0 +1,20 @@
+timestamp 1667379706
+version 8.3
+tech scmos
+style lambda=1.0(scna20_orb)
+scale 1000 1 100
+resistclasses 26670 59550 23860 19690 27260 2000000 49 26 2505830
+node "vss" 346 30080 -28 23 ndc 80 64 16 16 0 0 0 0 0 0 0 0 704 248 0 0 0 0
+node "vout" 113 2256 23 22 ndiff 32 24 64 32 0 0 0 0 0 0 0 0 80 48 0 0 0 0
+node "a_n18_23#" 476 22889 -18 23 ndiff 32 24 96 44 176 96 0 0 0 0 0 0 367 210 0 0 0 0
+node "a_n18_39#" 119 0 -18 39 pdiff 0 0 128 48 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "v_b" 239 8240 -10 21 p 0 0 0 0 160 88 0 0 0 0 0 0 16 16 0 0 0 0
+node "v_a" 239 8240 -26 30 pc 0 0 0 0 160 88 0 0 0 0 0 0 16 16 0 0 0 0
+node "vdd" 437 27636 -28 39 pdiff 16 16 160 76 0 0 0 0 0 0 0 0 636 214 0 0 0 0
+cap "a_n18_39#" "a_n18_23#" 3478
+device mosfet nfet 19 22 20 23 4 4 "Gnd!" "a_n18_23#" 8 0 "vss" 4 0 "vout" 4 0
+device mosfet nfet -10 23 -9 24 4 4 "Gnd!" "v_b" 8 0 "a_n18_23#" 4 0 "vss" 4 0
+device mosfet nfet -22 23 -21 24 4 4 "Gnd!" "v_a" 8 0 "vss" 4 0 "a_n18_23#" 4 0
+device mosfet pfet 19 38 20 39 4 8 "Vdd!" "a_n18_23#" 8 0 "vdd" 8 0 "vout" 8 0
+device mosfet pfet -10 39 -9 40 4 16 "Vdd!" "v_b" 8 0 "a_n18_39#" 16 0 "a_n18_23#" 16 0
+device mosfet pfet -22 39 -21 40 4 16 "Vdd!" "v_a" 8 0 "vdd" 16 0 "a_n18_39#" 16 0

@@ -1,0 +1,19 @@
+* not
+
+.include ./t14y_tsmc_025_level3.txt
+
+*** netlist
+mu vdd vin vout vdd cmosp l = 1u w = 25u
+md vout vin 0 0 cmosn l = 1u w = 10u
+
+vdd vdd 0 5
+vin vin 0 PULSE(0 5 0 0 0 2n 4n)
+c_load vout 0 1f
+
+.control
+    tran .01n 8n
+    plot vin title "Input a"
+    plot vout title "Output "
+.endc
+
+.end

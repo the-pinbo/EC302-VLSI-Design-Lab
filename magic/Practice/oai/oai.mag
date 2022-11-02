@@ -1,0 +1,105 @@
+magic
+tech scmos
+timestamp 1667140391
+<< nwell >>
+rect -26 -1 23 35
+<< polysilicon >>
+rect -14 20 -10 24
+rect -4 20 0 24
+rect 6 20 10 24
+rect -14 -1 -10 0
+rect -22 -5 -10 -1
+rect -14 -14 -10 -5
+rect -4 -2 0 0
+rect 6 -2 10 0
+rect 8 -6 10 -2
+rect -4 -14 0 -6
+rect 6 -14 10 -6
+rect -14 -28 -10 -24
+rect -4 -28 0 -24
+rect 6 -28 10 -24
+<< ndiffusion >>
+rect -20 -17 -14 -14
+rect -20 -21 -19 -17
+rect -15 -21 -14 -17
+rect -20 -24 -14 -21
+rect -10 -17 -4 -14
+rect -10 -21 -9 -17
+rect -5 -21 -4 -17
+rect -10 -24 -4 -21
+rect 0 -15 6 -14
+rect 0 -19 1 -15
+rect 5 -19 6 -15
+rect 0 -24 6 -19
+rect 10 -17 15 -14
+rect 10 -21 11 -17
+rect 10 -24 15 -21
+<< pdiffusion >>
+rect -20 12 -14 20
+rect -20 8 -19 12
+rect -15 8 -14 12
+rect -20 0 -14 8
+rect -10 0 -4 20
+rect 0 12 6 20
+rect 0 8 1 12
+rect 5 8 6 12
+rect 0 0 6 8
+rect 10 11 15 20
+rect 10 7 11 11
+rect 10 0 15 7
+<< metal1 >>
+rect -20 32 14 34
+rect -20 28 -17 32
+rect -13 28 7 32
+rect 11 28 14 32
+rect -20 26 14 28
+rect 1 12 5 26
+rect -19 -10 -15 8
+rect 11 -10 15 7
+rect -19 -14 15 -10
+rect 1 -15 5 -14
+rect -19 -30 -15 -21
+rect -9 -22 -5 -21
+rect 11 -22 15 -21
+rect -9 -26 15 -22
+rect 11 -30 15 -26
+rect -19 -33 15 -30
+rect -19 -37 -18 -33
+rect -14 -37 10 -33
+rect 14 -37 15 -33
+rect -19 -38 15 -37
+<< ntransistor >>
+rect -14 -24 -10 -14
+rect -4 -24 0 -14
+rect 6 -24 10 -14
+<< ptransistor >>
+rect -14 0 -10 20
+rect -4 0 0 20
+rect 6 0 10 20
+<< polycontact >>
+rect -26 -5 -22 -1
+rect -4 -6 0 -2
+rect 4 -6 8 -2
+<< ndcontact >>
+rect -19 -21 -15 -17
+rect -9 -21 -5 -17
+rect 1 -19 5 -15
+rect 11 -21 15 -17
+<< pdcontact >>
+rect -19 8 -15 12
+rect 1 8 5 12
+rect 11 7 15 11
+<< psubstratepcontact >>
+rect -18 -37 -14 -33
+rect 10 -37 14 -33
+<< nsubstratencontact >>
+rect -17 28 -13 32
+rect 7 28 11 32
+<< labels >>
+rlabel metal1 -2 -35 -2 -35 5 vss
+rlabel metal1 -4 30 -4 30 1 vdd
+rlabel metal1 13 -12 13 -12 3 vout
+rlabel polycontact -24 -3 -24 -3 7 a
+rlabel polycontact -2 -4 -2 -4 7 b
+rlabel polycontact 6 -4 6 -4 7 c
+<< end >>

@@ -1,0 +1,34 @@
+timestamp 1667196716
+version 8.3
+tech scmos
+style lambda=1.0(scna20_orb)
+scale 1000 1 100
+resistclasses 26670 59550 23860 19690 27260 2000000 49 26 2505830
+node "vss" 389 7708 70 -51 ndc 126 46 32 32 0 0 0 0 0 0 0 0 212 114 0 0 0 0
+node "vss" 644 9776 -7 -73 ppc 50 30 48 48 0 0 0 0 0 0 0 0 276 146 0 0 0 0
+node "a_14_n50#" 40 0 14 -50 ndiff 150 50 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_n3_n50#" 35 0 -3 -50 ndiff 130 46 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "vouttt" 136 4512 89 -51 ndiff 162 54 234 62 0 0 0 0 0 0 0 0 204 110 0 0 0 0
+node "a_n12_n50#" 772 31810 -12 -50 ndiff 50 30 234 88 361 156 0 0 0 0 0 0 776 396 0 0 0 0
+node "c" 435 10124 29 -52 p 0 0 0 0 292 154 0 0 0 0 0 0 16 16 0 0 0 0
+node "b" 435 10124 4 -25 pc 0 0 0 0 292 154 0 0 0 0 0 0 16 16 0 0 0 0
+node "a" 435 10124 -13 -24 pc 0 0 0 0 292 154 0 0 0 0 0 0 16 16 0 0 0 0
+node "vdd" 2962 0 58 -18 nw 32 32 182 54 0 0 0 0 0 0 0 0 180 98 0 0 3074 222
+node "vdd" 3168 0 -18 -19 nw 48 48 260 92 0 0 0 0 0 0 0 0 392 204 0 0 3782 246
+cap "vdd" "a_n12_n50#" 9400
+cap "vdd" "a_n12_n50#" 8655
+cap "a_n12_n50#" "c" 960
+cap "vouttt" "vdd" 3572
+cap "vdd" "c" 7596
+cap "a_n12_n50#" "a" 480
+cap "a_n12_n50#" "b" 960
+cap "vdd" "a" 7596
+cap "vdd" "b" 7596
+device mosfet nfet 84 -51 85 -50 5 9 "Gnd!" "a_n12_n50#" 10 0 "vss" 9 0 "vouttt" 9 0
+device mosfet nfet 29 -50 30 -49 4 10 "Gnd!" "c" 8 0 "a_14_n50#" 10 0 "vss" 10 0
+device mosfet nfet 10 -50 11 -49 4 10 "Gnd!" "b" 8 0 "a_n3_n50#" 10 0 "a_14_n50#" 10 0
+device mosfet nfet -7 -50 -6 -49 4 10 "Gnd!" "a" 8 0 "a_n12_n50#" 10 0 "a_n3_n50#" 10 0
+device mosfet pfet 84 1 85 2 5 13 "vdd" "a_n12_n50#" 10 0 "vdd" 13 0 "vouttt" 13 0
+device mosfet pfet 29 0 30 1 4 13 "vdd" "c" 8 0 "vdd" 13 0 "a_n12_n50#" 13 0
+device mosfet pfet 10 0 11 1 4 13 "vdd" "b" 8 0 "a_n12_n50#" 13 0 "vdd" 13 0
+device mosfet pfet -7 0 -6 1 4 13 "vdd" "a" 8 0 "vdd" 13 0 "a_n12_n50#" 13 0
